@@ -1,105 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact</title>
+  <title>立即进入</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
       overflow: hidden;
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
     }
 
-    .background {
-      background-image: url("background.jpg"); /* 你的背景图路径 */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      width: 100vw;
+    .wrapper {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%;
+      height: 100vh;
     }
 
-    .overlay {
+    /* 背景图 */
+    .background-img {
       position: absolute;
-      bottom: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      display: none;
+    }
+
+    .background-desktop {
+      display: block;
+    }
+
+    .btn-wrapper {
+      position: absolute;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: flex-end;
+      bottom: 40px;
       pointer-events: none;
     }
 
-    .desktop-btn,
-    .mobile-btn {
-      padding: 12px 32px;
+    .btn {
+      padding: 14px 32px;
       font-size: 18px;
       font-weight: bold;
       color: white;
       background-color: #ff6600;
-      border: 2px solid white;
-      border-radius: 16px;
-      text-align: center;
-      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 14px;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.9);
       animation: float 3s ease-in-out infinite;
       pointer-events: auto;
       white-space: nowrap;
     }
 
-    .desktop-btn {
-      display: block;
+    /* 按钮悬浮动画 */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
-    .mobile-btn {
-      display: none;
-    }
-
+    /* 手机样式 */
     @media (max-width: 768px) {
-      .overlay {
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 20px;
-      }
-
-      .desktop-btn {
+      .background-desktop {
         display: none;
       }
 
-      .mobile-btn {
+      .background-mobile {
         display: block;
-        padding: 10px 24px;
-        font-size: 16px;
       }
-    }
 
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-      100% {
-        transform: translateY(0px);
+      .btn {
+        font-size: 16px;
+        padding: 10px 24px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background">
+  <div class="wrapper">
     <!-- 背景图 -->
-    <img src="girl.png" alt="Girl" style="max-height: 100%; max-width: 100%; object-fit: contain; z-index: 1; position: relative;" />
+    <img src="images/WB02.jpg" alt="电脑背景" class="background-img background-desktop">
+    <img src="images/WB01.jpg" alt="手机背景" class="background-img background-mobile">
 
-    <!-- 按钮区域 -->
-    <div class="overlay">
-      <a href="#" class="desktop-btn">CONTACT US</a>
-      <a href="#" class="mobile-btn">CONTACT US</a>
+    <!-- 按钮 -->
+    <div class="btn-wrapper">
+      <a class="btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</a>
     </div>
   </div>
 </body>
