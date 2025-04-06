@@ -52,6 +52,7 @@
       text-decoration: none;
       box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
       animation: float 3s ease-in-out infinite;
+      will-change: transform; /* 提高动画流畅度 */
       white-space: nowrap;
     }
 
@@ -103,6 +104,8 @@
       .btn {
         font-size: 16px;
         padding: 10px 24px;
+        animation: float 3s ease-in-out infinite; /* 确保动画在移动端生效 */
+        will-change: transform;
       }
     }
   </style>
@@ -110,8 +113,8 @@
 <body>
   <div class="wrapper">
     <!-- 背景图 -->
-    <img src="images/WB02.jpg" alt="电脑背景" class="background-img background-desktop">
-    <img src="images/WB01.jpg" alt="手机背景" class="background-img background-mobile">
+    <img src="images/WB02.jpg" alt="电脑背景" class="background-img background-desktop" loading="lazy">
+    <img src="images/WB01.jpg" alt="手机背景" class="background-img background-mobile" loading="lazy">
 
     <!-- 电脑按钮 -->
     <div class="desktop-btn-wrapper">
