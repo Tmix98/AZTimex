@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>立即进入</title>
 
-  <!-- Google Fonts -->
+  <!-- 字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: "Playfair Display", serif;
     }
@@ -32,7 +32,6 @@
       align-items: center;
     }
 
-    /* 背景图层 */
     .desktop-bg, .mobile-bg {
       position: absolute;
       top: 0;
@@ -47,7 +46,6 @@
       display: none;
     }
 
-    /* 浮动动画 */
     @keyframes floaty {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
@@ -58,15 +56,13 @@
       text-align: center;
       text-decoration: none;
       color: #fff;
-      padding: 12px 40px;
       background-color: #ff6600;
+      border: 2px solid #fff;
       border-radius: 12px;
-      font-size: 24px;
       font-weight: 700;
-      border: 2px solid white;
       box-shadow: 0 0 15px #ff6600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       animation: floaty 3s ease-in-out infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn:hover {
@@ -74,27 +70,41 @@
       box-shadow: 0 0 25px #ff6600;
     }
 
+    /* 桌面按钮 */
     .desktop-btn {
+      font-size: 24px;
+      padding: 14px 40px;
       display: block;
     }
 
+    /* 手机按钮 */
     .mobile-btn {
+      font-size: 18px;
+      padding: 10px 30px;
       display: none;
       position: absolute;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 18px;
-      padding: 10px 25px;
     }
 
-    /* 手机端样式 */
+    /* 手机模式样式调整 */
     @media (max-width: 768px) {
-      .desktop-bg { display: none; }
-      .mobile-bg { display: block; }
+      .desktop-bg {
+        display: none;
+      }
 
-      .desktop-btn { display: none; }
-      .mobile-btn { display: block; }
+      .mobile-bg {
+        display: block;
+      }
+
+      .desktop-btn {
+        display: none;
+      }
+
+      .mobile-btn {
+        display: block;
+      }
     }
   </style>
 </head>
