@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- 预连接到 Google Fonts 和字体文件 -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -18,15 +18,9 @@
 
     body, html {
       height: 100%;
+      font-family: "Playfair Display", serif;
     }
 
-    /* 使用 Bungee Tint 字体 */
-    .bungee-tint-regular {
-      font-family: "Bungee Tint", sans-serif;
-      font-weight: 400;
-    }
-
-    /* 父容器 */
     .wrapper {
       position: relative;
       width: 100%;
@@ -37,102 +31,63 @@
       overflow: hidden;
     }
 
-    /* 电脑背景 */
-    .desktop-bg {
-      display: block;
+    .desktop-bg, .mobile-bg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1; /* 确保背景处于底层 */
+      z-index: -1;
     }
 
-    /* 手机背景 */
     .mobile-bg {
       display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1; /* 确保背景处于底层 */
     }
 
-    /* 电脑按钮 */
-    .desktop-btn, .mobile-btn {
-      font-family: "Playfair Display", serif; /* 设置字体为 Playfair Display */
-    }
-
+    /* Desktop button */
     .desktop-btn {
       display: block;
-      padding: 10px 20px;
-      font-size: 20px;
+      padding: 20px 60px;
+      font-size: 50px;
+      font-weight: 700;
       color: black;
       background-color: #ff6600;
       border: none;
       border-radius: 10px;
-      cursor: pointer;
+      text-align: center;
       text-decoration: none;
-      z-index: 1; /* 确保按钮在最上层 */
+      cursor: pointer;
+      z-index: 1;
+      line-height: 1.1;
     }
 
-    /* 手机按钮 */
+    /* Mobile button */
     .mobile-btn {
       display: none;
       position: absolute;
-      bottom: 20px; /* 将按钮固定在底部 */
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 10px 30px;
-      font-size: 15px;
+      padding: 12px 30px;
+      font-size: 20px;
+      font-weight: 700;
       color: white;
       background-color: #ff6600;
       border: none;
       border-radius: 10px;
-      cursor: pointer;
+      text-align: center;
       text-decoration: none;
-      z-index: 1; /* 确保按钮在最上层 */
+      cursor: pointer;
+      z-index: 1;
+      line-height: 1;
     }
 
     .desktop-btn:hover, .mobile-btn:hover {
       background-color: #cc5200;
     }
 
-    /* 使用动态类名，设置不同的 font-weight 和 font-style */
-    .bungee-tint-regular {
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    .bungee-tint-regular {
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    .bungee-tint-regular {
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .bungee-tint-regular {
-      font-weight: 700;
-      font-style: italic;
-    }
-
-    /* 电脑按钮字体大小更改 */
-     .desktop-btn {
-     font-size: 50px; /* 设置电脑按钮的字体大小为24px */
-    }
-
-    /* 手机按钮字体大小更改 */
-    .mobile-btn {
-    font-size: 50px; /* 设置手机按钮的字体大小为20px */
-    }
-
-    /* 当设备是手机时显示手机背景和手机按钮 */
+    /* Mobile layout */
     @media (max-width: 768px) {
       .desktop-bg {
         display: none;
@@ -154,17 +109,19 @@
 </head>
 <body>
   <div class="wrapper">
-    <!-- 电脑背景 -->
+    <!-- 背景图 -->
     <img class="desktop-bg" src="images/WB02.jpg" alt="电脑背景">
-
-    <!-- 手机背景 -->
     <img class="mobile-bg" src="images/WB01.jpg" alt="手机背景">
 
-    <!-- 电脑按钮，应用 Playfair Display 的不同样式 -->
-    <a class="desktop-btn playfair-display playfair-display-bold" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</center>
+    <!-- 电脑按钮（换行） -->
+    <a class="desktop-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
+      CONTACT<br>US
+    </a>
 
-    <!-- 手机按钮，应用 Playfair Display 的不同样式 -->
-    <a class="mobile-btn playfair-display playfair-display-italic" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</center>
+    <!-- 手机按钮（单行） -->
+    <a class="mobile-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
+      CONTACT US
+    </a>
   </div>
 </body>
 </html>
