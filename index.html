@@ -1,112 +1,106 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>立即进入</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .wrapper {
-      position: relative;
-      width: 100%;
+    .background {
+      background-image: url("background.jpg"); /* 你的背景图路径 */
+      background-size: cover;
+      background-position: center;
       height: 100vh;
+      width: 100vw;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
     }
 
-    .desktop-bg, .mobile-bg {
+    .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      pointer-events: none;
     }
 
-    .desktop-bg { display: block; }
-    .mobile-bg { display: none; }
-
-    .desktop-btn, .mobile-btn {
-      padding: 10px 30px;
-      font-size: 20px;
+    .desktop-btn,
+    .mobile-btn {
+      padding: 12px 32px;
+      font-size: 18px;
+      font-weight: bold;
       color: white;
       background-color: #ff6600;
       border: 2px solid white;
-      border-radius: 12px;
+      border-radius: 16px;
+      text-align: center;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
-      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
       animation: float 3s ease-in-out infinite;
-    }
-
-    .desktop-btn:hover, .mobile-btn:hover {
-      background-color: #cc5200;
-      box-shadow: 0 0 25px rgba(255, 102, 0, 1);
+      pointer-events: auto;
+      white-space: nowrap;
     }
 
     .desktop-btn {
       display: block;
     }
 
-   .mobile-btn {
+    .mobile-btn {
       display: none;
-      position: absolute;
-      top: 200px;
-      left: 50%;
-      transform: translateX 20%;
-      padding: 10px 30px;
-      font-size: 16px;
-      color: white;
-      background-color: #ff6600;
-      border: 2px solid white;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
-      animation: float 3s ease-in-out infinite;
-      width: auto;
-      white-space: nowrap;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      .desktop-bg { display: none; }
-      .mobile-bg { display: block; }
-      .desktop-btn { display: none; }
-      .mobile-btn { display: block; }
+      .overlay {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .desktop-btn {
+        display: none;
+      }
+
+      .mobile-btn {
+        display: block;
+        padding: 10px 24px;
+        font-size: 16px;
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <img class="desktop-bg" src="images/WB02.jpg" alt="电脑背景">
-    <img class="mobile-bg" src="images/WB01.jpg" alt="手机背景">
+  <div class="background">
+    <!-- 背景图 -->
+    <img src="girl.png" alt="Girl" style="max-height: 100%; max-width: 100%; object-fit: contain; z-index: 1; position: relative;" />
 
-    <a class="desktop-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</a>
-    <a class="mobile-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</a>
+    <!-- 按钮区域 -->
+    <div class="overlay">
+      <a href="#" class="desktop-btn">CONTACT US</a>
+      <a href="#" class="mobile-btn">CONTACT US</a>
+    </div>
   </div>
 </body>
 </html>
