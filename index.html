@@ -127,13 +127,16 @@
   </div>
 
   <script>
-    // 动态给按钮添加悬浮动画类（移动端保障机制）
-    window.addEventListener("DOMContentLoaded", function () {
-      const mobileBtn = document.getElementById("mobileBtn");
+    window.addEventListener("load", function () {
+      const btn = document.getElementById("mobileBtn");
       const isMobile = window.innerWidth <= 768;
 
-      if (isMobile && mobileBtn) {
-        mobileBtn.classList.add("float-animation");
+      if (btn && isMobile) {
+        // 加一点延迟确保 DOM 已渲染完成
+        setTimeout(() => {
+          btn.classList.add("float-animation");
+          console.log("✅ 动画类已添加到移动按钮！");
+        }, 300); 
       }
     });
   </script>
