@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!-- 预连接到 Google Fonts 和字体文件 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <title>立即进入</title>
@@ -13,6 +18,12 @@
 
     body, html {
       height: 100%;
+    }
+
+    /* 使用 Bungee Tint 字体 */
+    .bungee-tint-regular {
+      font-family: "Bungee Tint", sans-serif;
+      font-weight: 400;
     }
 
     /* 父容器 */
@@ -51,12 +62,16 @@
     }
 
     /* 电脑按钮 */
+    .desktop-btn, .mobile-btn {
+      font-family: "Playfair Display", serif; /* 设置字体为 Playfair Display */
+    }
+
     .desktop-btn {
       display: block;
-      padding: 20px 60px;
-      font-size: 18px;
-      color: white;
-      background-color: #edfa00;
+      padding: 10px 20px;
+      font-size: 20px;
+      color: black;
+      background-color: #ff6600;
       border: none;
       border-radius: 10px;
       cursor: pointer;
@@ -74,7 +89,7 @@
       padding: 15px 50px;
       font-size: 16px;
       color: white;
-      background-color: #edfa00;
+      background-color: #ff6600;
       border: none;
       border-radius: 10px;
       cursor: pointer;
@@ -84,6 +99,37 @@
 
     .desktop-btn:hover, .mobile-btn:hover {
       background-color: #cc5200;
+    }
+
+    /* 使用动态类名，设置不同的 font-weight 和 font-style */
+    .bungee-tint-regular {
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .bungee-tint-regular {
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .bungee-tint-regular {
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .bungee-tint-regular {
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    /* 电脑按钮字体大小更改 */
+     .desktop-btn {
+     font-size: 50px; /* 设置电脑按钮的字体大小为24px */
+    }
+
+    /* 手机按钮字体大小更改 */
+    .mobile-btn {
+    font-size: 50px; /* 设置手机按钮的字体大小为20px */
     }
 
     /* 当设备是手机时显示手机背景和手机按钮 */
@@ -114,11 +160,11 @@
     <!-- 手机背景 -->
     <img class="mobile-bg" src="images/WB01.jpg" alt="手机背景">
 
-    <!-- 电脑按钮 -->
-    <a class="desktop-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT NOW</a>
+    <!-- 电脑按钮，应用 Playfair Display 的不同样式 -->
+    <a class="desktop-btn playfair-display playfair-display-bold" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</a>
 
-    <!-- 手机按钮 -->
-    <a class="mobile-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT NOW</a>
+    <!-- 手机按钮，应用 Playfair Display 的不同样式 -->
+    <a class="mobile-btn playfair-display playfair-display-italic" href="http://timex77.com/en/registration?as=FBNK" target="_blank">CONTACT US</a>
   </div>
 </body>
 </html>
