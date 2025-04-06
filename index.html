@@ -52,8 +52,10 @@
       text-decoration: none;
       box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
       animation: float 3s ease-in-out infinite;
-      will-change: transform; /* 提高动画流畅度 */
+      will-change: transform;
       white-space: nowrap;
+      z-index: 10;
+      position: relative; /* 关键：保证动画有效可见 */
     }
 
     /* 悬浮动画 */
@@ -72,6 +74,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 2;
     }
 
     /* 手机端按钮容器 */
@@ -81,6 +84,7 @@
       top: 280px;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 2;
     }
 
     /* 响应式处理：手机端 */
@@ -104,8 +108,10 @@
       .btn {
         font-size: 16px;
         padding: 10px 24px;
-        animation: float 3s ease-in-out infinite; /* 确保动画在移动端生效 */
+        animation: float 3s ease-in-out infinite; /* 强化声明动画 */
         will-change: transform;
+        position: relative; /* 关键：触发重绘和动画 */
+        z-index: 10;
       }
     }
   </style>
