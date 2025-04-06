@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- Google Fonts -->
+  <!-- 字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <title>立即进入</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -16,9 +17,10 @@
       padding: 0;
     }
 
-    body, html {
+    html, body {
       height: 100%;
-      font-family: "Playfair Display", serif;
+      font-family: 'Playfair Display', serif;
+      background-color: #000;
     }
 
     .wrapper {
@@ -45,49 +47,40 @@
       display: none;
     }
 
-    /* Desktop button */
-    .desktop-btn {
-      display: block;
-      padding: 20px 60px;
-      font-size: 50px;
+    /* 按钮基础样式 */
+    .btn {
+      padding: 12px 40px;
+      font-size: 24px;
       font-weight: 700;
-      color: black;
-      background-color: #ff6600;
-      border: none;
-      border-radius: 10px;
       text-align: center;
       text-decoration: none;
-      cursor: pointer;
-      z-index: 1;
-      line-height: 1.1;
+      border-radius: 12px;
+      border: 2px solid #fff;
+      background-color: #ff6600;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(255, 102, 0, 0.7);
+      transition: all 0.3s ease;
     }
 
-    /* Mobile button */
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 102, 0, 1);
+    }
+
+    .desktop-btn {
+      display: block;
+    }
+
     .mobile-btn {
       display: none;
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 12px 30px;
-      font-size: 20px;
-      font-weight: 700;
-      color: white;
-      background-color: #ff6600;
-      border: none;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      z-index: 1;
-      line-height: 1;
+      font-size: 18px;
+      padding: 10px 25px;
     }
 
-    .desktop-btn:hover, .mobile-btn:hover {
-      background-color: #cc5200;
-    }
-
-    /* Mobile layout */
     @media (max-width: 768px) {
       .desktop-bg {
         display: none;
@@ -113,13 +106,13 @@
     <img class="desktop-bg" src="images/WB02.jpg" alt="电脑背景">
     <img class="mobile-bg" src="images/WB01.jpg" alt="手机背景">
 
-    <!-- 电脑按钮（换行） -->
-    <a class="desktop-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
-      CONTACT<br>US
+    <!-- 桌面按钮 -->
+    <a class="btn desktop-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
+      CONTACT US
     </a>
 
-    <!-- 手机按钮（单行） -->
-    <a class="mobile-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
+    <!-- 手机按钮 -->
+    <a class="btn mobile-btn" href="http://timex77.com/en/registration?as=FBNK" target="_blank">
       CONTACT US
     </a>
   </div>
